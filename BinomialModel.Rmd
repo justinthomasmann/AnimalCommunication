@@ -6,9 +6,16 @@ output: html_document
 runtime: shiny
 ---
 
+<<<<<<< HEAD
 ```{r libraries, echo=FALSE}
 library(tidyverse)
 library(rethinking)
+=======
+```{r setup, include=FALSE}
+# install.packages(c("coda","mvtnorm","devtools","loo","dagitty","shape"))
+# devtools::install_github("rmcelreath/rethinking")
+# devtools::install_github("stan-dev/cmdstanr")
+>>>>>>> bd69f93d6451c2ae1a07e65fe00e2eeb756d2063
 ```
 
 This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
