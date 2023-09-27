@@ -6,6 +6,7 @@ output: html_document
 runtime: shiny
 ---
 
+![](images/QuantifyingInformation.png)
 
 ## Anthrops vs. Disconnectors Poll
 
