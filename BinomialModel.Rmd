@@ -1,5 +1,5 @@
 ---
-title: "Binomial Model Updating"
+title: "Building the World in Models"
 author: "Justin Mann"
 date: "2023-09-23"
 output: html_document
@@ -19,13 +19,21 @@ library(rethinking)
 ```
 
 
-## Anthrops vs. Disconnectors
+## Anthrops vs. Disconnectors Poll
 
-At the end of our Socratic debate, you voted on whether 1) anthropomorphism or 2) disconnection from our evolutionary roots was the more troublesome source of bias when studying animal communication.
+At the end of our Socratic debate, you voted on whether 1) anthropomorphism or 2) disconnection from our evolutionary roots was the more troublesome source of bias in the study of animal communication.
 
-In this portion of our "Building the World in Models" lesson, I'd like you to think about how animals decide when they've collected enough information to make a sufficiently informed choice regarding their communication with other individuals. In other words, when do animals decide that they've collected enough data (SMALL WORLD) to accurately represent the realized outcome of their decisions (LARGE WORLD). 
+In this part of our "Building the World in Models" lesson, I'd like you to think about how animals decide when they've collected enough information to make sufficiently informed choices regarding their communication with other individuals. In other words, when/how do you think animals decide that they've collected enough data (SMALL WORLD) to accurately represent the realized outcome of a decision (LARGE WORLD). Think back to how the bees selected a new hive site.
 
-In the exercise below, I've written some R code (with a little help from ChatGPT) that allows you to generate SMALL WORLD data from the LARGE WORLD true distribution of votes from our Anthrops vs. Disconnectors poll. This code essentially works like the marble example from the first part of this lesson. By clicking the "Generate Random Numbers" button, you are drawing three random votes out of the pool of your 24 total votes. Each time you click that button, you are again pulling three more votes out of the same pool of 24 total votes (like placing the marbles back in the bag after each sample).    
+In the exercise below, I've written some R code that allows you to generate SMALL WORLD data from the LARGE WORLD true distribution of votes from our Anthrops vs. Disconnectors poll. This code essentially works like the marble example from the first part of this lesson. By clicking the "Generate Random Numbers" button, you are drawing three random votes out of the pool of your 24 votes. Each time you click that button, you are pulling three more votes out of the same pool of 24 votes (like placing the marbles back in the bag after each sample).
+
+So, the question is: how many samples would you need to take (how much information do you need to collect) before your SMALL WORLD samples accurately represents the LARGE WORLD distribution of votes? 
+
+Can you describe the trade off between the time/energy it takes to collect more information and making an efficient decision that benefits your fitness?
+
+INSTRUCTIONS: Click the "Generate Random Numbers" button near the bottom of the page. This will generate 3 data points (1s and 0s). Then, plot the votes in the probability distribution figure: for each 0, add a vote for disconnection, and for each 1, add a vote for anthropomorphism. Then, repeat that process, generating 3 new random numbers and adding these new data to the figure.
+
+Each time you add new data, you are updating your prior model to create a posterior model that will more accurately represent the true distribution of the class's total votes. Note how the distribution curve changes as you add more data. 
 
 
 
