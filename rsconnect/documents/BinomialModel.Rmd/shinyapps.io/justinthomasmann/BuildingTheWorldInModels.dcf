@@ -1,0 +1,12 @@
+name: BuildingTheWorldInModels
+title: BuildingTheWorldInModels
+username: justinthomasmann
+account: justinthomasmann
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10008542
+bundleId: 7734648
+url: https://justinthomasmann.shinyapps.io/BuildingTheWorldInModels/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
