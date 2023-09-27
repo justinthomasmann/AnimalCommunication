@@ -32,7 +32,7 @@ In the exercise below, I've written some R code (with a little help from ChatGPT
 ```{r random numbers 1, echo=FALSE}
 # Define the UI for the app
 ui <- fluidPage(
-  titlePanel("Random Number Generator 1"),
+  titlePanel("Random Number Generator"),
   sidebarLayout(
     sidebarPanel(
       actionButton("generate_button", "Generate Random Numbers")
@@ -59,250 +59,6 @@ server <- function(input, output) {
     })
   })
 }
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 2, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 2"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 3, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 3"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 4, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 4"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 5, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 5"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 6, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 6"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 7, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 7"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-```{r random numbers 8, echo=FALSE}
-# Define the UI for the app
-ui <- fluidPage(
-  titlePanel("Random Number Generator 8"),
-  sidebarLayout(
-    sidebarPanel(
-      actionButton("generate_button", "Generate Random Numbers")
-    ),
-    mainPanel(
-      verbatimTextOutput("random_numbers")
-    )
-  )
-)
-
-# Define the server for the app
-server <- function(input, output) {
-  # Function to generate random numbers
-  generateRandomNumbers <- function() {
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(12/24, 12/24))
-    return(random_numbers)
-  }
-  
-  # Event handler for the button click
-  observeEvent(input$generate_button, {
-    numbers <- generateRandomNumbers()
-    output$random_numbers <- renderPrint({
-      numbers
-    })
-  })
-}
-
-# Run the app
-shinyApp(ui = ui, server = server)
-```
-
-```{r decision plot, echo=FALSE}
 inputPanel(
   numericInput("n_W", label = "Anthropomorphism (1)", 0, min = 0, max = 50),
   
@@ -314,7 +70,12 @@ W <- input$n_W
 L <- input$n_L
 curve(dbeta(x, W+1, L+1), from = 0, to = 1, xlab = "Proportion of votes (A/D)", ylab = "Density")
 })
+# Run the app
+shinyApp(ui = ui, server = server)
 ```
+
+
+
 
 
 
