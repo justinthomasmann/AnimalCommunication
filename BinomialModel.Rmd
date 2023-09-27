@@ -7,18 +7,6 @@ runtime: shiny
 ---
 
 
-```{r libraries, include=FALSE}
-library(tidyverse)
-library(rethinking)
-```
-
-```{r setup, include=FALSE}
-# install.packages(c("coda","mvtnorm","devtools","loo","dagitty","shape"))
-# devtools::install_github("rmcelreath/rethinking")
-# devtools::install_github("stan-dev/cmdstanr")
-```
-
-
 ## Anthrops vs. Disconnectors Poll
 
 At the end of our Socratic debate, you voted on whether 1) anthropomorphism or 2) disconnection from our evolutionary roots was the more troublesome source of bias in the study of animal communication.
