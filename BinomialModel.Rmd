@@ -65,7 +65,7 @@ inputPanel(
 renderPlot({
 W <- input$n_W
 L <- input$n_L
-curve(dbeta(x, W+1, L+1), from = 0, to = 1, xlab = "Proportion of votes (A/D)", ylab = "Density")
+curve(dbeta(x, W+1, L+1), from = 0, to = 1, xlab = "Proportion of votes (D=0/A=1)", ylab = "Probability Density")
 })
 # Run the app
 shinyApp(ui = ui, server = server)
