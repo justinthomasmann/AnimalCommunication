@@ -56,9 +56,9 @@ server <- function(input, output) {
   })
 }
 inputPanel(
-  numericInput("n_W", label = "Anthropomorphism (1)", 0, min = 0, max = 50),
+  numericInput("n_W", label = "Anthropomorphism (1)", 0, min = 0, max = 200),
   
-  numericInput("n_L", label = "Disconnection (0)", 0, min = 0, max = 50)
+  numericInput("n_L", label = "Disconnection (0)", 0, min = 0, max = 200)
 )
 
 renderPlot({
