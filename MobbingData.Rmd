@@ -1,0 +1,41 @@
+---
+title: "Mobbing Data"
+author: "Justin Mann"
+date: "2024-09-11"
+output: html_document
+---
+
+## Libraries
+```{r}
+library(tidyverse)
+library(vegan)
+```
+
+
+## Import Data
+
+```{r df}
+df <- read.csv("MobbingData_F24.csv", h=T)
+```
+
+```{r}
+
+wdf <- df %>% spread(key = Species, Count)
+
+wdf[is.na(wdf)] <-0
+wdf$obs <- 1:nrow(wdf)
+wdf <- wdf %>% select(obs, everything())
+
+cov <- wdf %>% select(Day,Trial,Treatment)
+
+wdf <- wdf[,c(1,5:31)]
+
+cov$H <- diversity(wdf)
+cov$spp <- specnumber(wdf)
+H.aov <- aov(H ~ Treatment, data = cov)
+summary(H.aov)
+
+spp.aov <- aov(spp ~ Treatment, data = cov)
+summary(spp.aov)
+```
+
