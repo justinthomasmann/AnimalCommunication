@@ -15,27 +15,54 @@ library(vegan)
 ## Import Data
 
 ```{r df}
-df <- read.csv("MobbingData_F24.csv", h=T)
+df <- read.csv("MobbingSpeciesData_F24.csv", h=T)
 ```
 
-```{r}
-
+```{r diversity and richness}
+#Spread long format data to wide format
 wdf <- df %>% spread(key = Species, Count)
 
+#Convert NAs to zeros
 wdf[is.na(wdf)] <-0
-wdf$obs <- 1:nrow(wdf)
-wdf <- wdf %>% select(obs, everything())
 
+#Create a sequential numeric vector for observation ID
+wdf$obs <- 1:nrow(wdf)
+wdf <- wdf %>% select(obs, everything()) #move obs to column one
+
+#Create a covariate dataframe with treatment factor
 cov <- wdf %>% select(Day,Trial,Treatment)
 
+#Remove factors from the wide form dataframe
 wdf <- wdf[,c(1,5:31)]
 
+#Append Shannon diversity and species richness to covariate dataframe
+cov$Trial <- 1:nrow(cov) #Number trials 1-9
 cov$H <- diversity(wdf)
 cov$spp <- specnumber(wdf)
+```
+
+
+```{r diversity ANOVA}
+#ANOVA comparing diversity by Treatment
 H.aov <- aov(H ~ Treatment, data = cov)
 summary(H.aov)
+```
 
+
+```{r richness ANOVA}
+#ANOVA comparing species richness by Treatment
 spp.aov <- aov(spp ~ Treatment, data = cov)
 summary(spp.aov)
+```
+
+
+```{r audio.df}
+audio.df <- read.csv("TotalMobbingSelections.csv", h=T)
+
+byTrial.df <- audio.df %>% group_by(Trial)
+
+EntropyByTrial <- byTrial.df %>% summarise(MaxEntropy = mean(Max.Entropy..bits.), AvgEntropy = mean(Avg.Entropy..bits.))
+
+newCov.df <- full_join(EntropyByTrial, cov, by = join_by(Trial))
 ```
 
