@@ -1,11 +1,11 @@
 name: BuildingTheWorldInModels
-title: BuildingTheWorldInModels
+title: BinomialModel
 username: justinthomasmann
 account: justinthomasmann
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10008542
-bundleId: 8277261
+bundleId: 9135581
 url: https://justinthomasmann.shinyapps.io/BuildingTheWorldInModels/
 version: 1
 asMultiple: FALSE
