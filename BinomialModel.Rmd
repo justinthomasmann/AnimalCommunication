@@ -44,11 +44,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   # Function to generate random numbers
   generateRandomNumbers <- function() {
-<<<<<<< HEAD
     random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(11/19, 8/19))
-=======
-    random_numbers <- sample(c(0, 1), 3, replace = TRUE, prob = c(8/16, 8/16))
->>>>>>> 02dc11796c3be085b73e21b40a21d94268948d25
     return(random_numbers)
   }
   
