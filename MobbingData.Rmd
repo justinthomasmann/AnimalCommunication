@@ -42,6 +42,21 @@ cov$spp <- specnumber(wdf)
 ```
 
 
+```{r audio.df}
+#Read in bioacoustics data
+audio.df <- read.csv("TotalMobbingSelections.csv", h=T)
+
+#Group by trial number
+byTrial.df <- audio.df %>% group_by(Trial)
+
+#Create a vector with the average max entropy per trial
+EntropyByTrial <- byTrial.df %>% summarise(MaxEntropy = mean(Max.Entropy..bits.), AvgEntropy = mean(Avg.Entropy..bits.))
+
+#Join average max entropy per trial to the covariate dataframe
+newCov.df <- full_join(EntropyByTrial, cov, by = join_by(Trial))
+```
+
+
 ```{r diversity ANOVA}
 #ANOVA comparing diversity by Treatment
 H.aov <- aov(H ~ Treatment, data = cov)
@@ -56,13 +71,9 @@ summary(spp.aov)
 ```
 
 
-```{r audio.df}
-audio.df <- read.csv("TotalMobbingSelections.csv", h=T)
-
-byTrial.df <- audio.df %>% group_by(Trial)
-
-EntropyByTrial <- byTrial.df %>% summarise(MaxEntropy = mean(Max.Entropy..bits.), AvgEntropy = mean(Avg.Entropy..bits.))
-
-newCov.df <- full_join(EntropyByTrial, cov, by = join_by(Trial))
+```{r maxEntropy}
+#ANOVA comparing species richness by Treatment
+maxEntropy.aov <- aov(MaxEntropy ~ Treatment, data = newCov.df)
+summary(maxEntropy.aov)
 ```
 
