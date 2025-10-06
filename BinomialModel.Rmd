@@ -27,6 +27,9 @@ Each time you add new data, you are updating your prior model to create a poster
 
 
 ```{r random numbers 1, echo=FALSE}
+
+library(shiny)
+
 # Define the UI for the app
 ui <- fluidPage(
   titlePanel("Random Number Generator"),
